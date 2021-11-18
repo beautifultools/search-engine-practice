@@ -17,12 +17,12 @@ class OpenApiMovieMapper implements MovieMapper<OpenApiResponseData>{
         movie.type = input.typeNm;
         movie.country = input.repNationNm;
         movie.director = input.directors[0]?.peopleNm;
-        movie.openDate = this.convertOpenDateToDate(input.openDt);
+        movie.openDate = OpenApiMovieMapper.convertOpenDateToDate(input.openDt);
 
         return movie;
     }
 
-    private convertOpenDateToDate(openDate:string){
+    private static convertOpenDateToDate(openDate:string){
         const date = new Date();
 
         const year = Number(openDate.substr(0, 4));
