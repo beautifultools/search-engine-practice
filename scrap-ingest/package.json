@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "run-scraper": "ts-node movie-scraper.ts",
+    "run-ingestor": "ts-node movie-ingestor.ts",
+    "create-esindex": "ts-node util/create-movie-es-index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
