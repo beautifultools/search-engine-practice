@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: ipvp-mysql
+    restart: always
+    ports:
+      - 9907:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root-pw
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user-pw
+      MYSQL_DATABASE: ipvp
+      LC_ALL: C.UTF-8
+      TZ: Asia/Seoul
+    networks:
+      - ipvp-search
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+    environment:
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+    networks:
+      - ipvp-search
+  neo4j:
+    image: neo4j
+    environment:
+      NEO4J_AUTH: neo4j/s3cr3t
+    ports:
+      - 7474:7474
+      - 7687:7687
+
+networks:
+  ipvp-search:
+    driver: bridge
