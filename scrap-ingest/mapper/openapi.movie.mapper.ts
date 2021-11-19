@@ -13,7 +13,7 @@ class OpenApiMovieMapper implements MovieMapper<OpenApiResponseData>{
 
         movie.movieNo = Number.parseInt(input.movieCd);
         movie.title = input.movieNm;
-        movie.genre = input.movieNm ;
+        movie.genre = input.repGenreNm;
         movie.type = input.typeNm;
         movie.country = input.repNationNm;
         movie.director = input.directors[0]?.peopleNm;
