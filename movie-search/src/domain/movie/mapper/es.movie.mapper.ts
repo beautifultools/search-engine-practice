@@ -1,6 +1,6 @@
 import { MovieMapper } from './interface/movie.mapper';
 import { MovieIndex } from '../persistence/movie.es';
-import { Movie } from '../entity/movie';
+import { Movie } from '../entity/Movie';
 
 
 class EsMovieMapper implements MovieMapper<MovieIndex> {

@@ -1,5 +1,5 @@
 import { MovieMapper } from './interface/movie.mapper';
-import { Movie } from '../entity/movie';
+import { Movie } from '../entity/Movie';
 import { MovieEntity } from '../persistence/movie.orm';
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Connection } from 'typeorm';
-import { Movie } from '../entity/movie';
+import { Movie } from '../entity/Movie';
 import { MovieEntity } from '../persistence/movie.orm';
 import { OrmMovieMapper } from '../mapper/orm.movie.mapper';
 

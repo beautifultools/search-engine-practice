@@ -1,4 +1,4 @@
-import { Movie } from '../../entity/movie';
+import { Movie } from '../../entity/Movie';
 import { MovieIndex } from '../../persistence/movie.es';
 
 

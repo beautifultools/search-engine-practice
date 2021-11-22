@@ -6,12 +6,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { GlobalModule } from './global/global.module';
 import { SearchModule } from './domain/search/search.module';
 import { MovieModule } from './domain/movie/movie.module';
+import { UserModule } from './domain/user/user.module';
 
 @Module({
   imports: [
     GlobalModule,
     SearchModule,
     MovieModule,
+    UserModule,
     TypeOrmModule.forRoot(),
     ElasticsearchModule.register({
       node: 'http://localhost:9200',

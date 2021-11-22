@@ -1,22 +1,26 @@
 import { Controller, Get, Inject, Query, Render, Session } from '@nestjs/common';
 import { SearchService } from '../service/search.service';
-import { Movie } from '../../movie/entity/movie';
+import { Movie } from '../../movie/entity/Movie';
 import { SearchLogger } from '../../../global/log/interface/logger';
+import { DtoSearchOptionMapper } from '../mapper/dto.search.mapper';
 
 @Controller('search')
 export class SearchController {
   constructor(
     private searchService: SearchService,
-    @Inject('SearchLogger') private searchLogger:SearchLogger
+    @Inject('SearchLogger') private searchLogger:SearchLogger,
+    private dtoSearchOptionMapper: DtoSearchOptionMapper,
   ){}
 
   @Get()
   @Render('search/result')
-  async search(@Query() searchParam:SearchParam, @Session() session: Record<string, any>) {
-    session.user = searchParam.user; // 로그인 기능 구현 생략하면서 유저를 다른 곳에서도 로깅하기 위한 임시 방편
+  async search(@Query() searchDto:SearchDTO, @Session() session: Record<string, any>) {
+    session.user = searchDto.user; // 로그인 기능 구현 생략하면서 유저를 다른 곳에서도 로깅하기 위한 임시 방편
 
-    const movies:Movie[] = await this.searchService.search(searchParam);
-    this.logMovieSearch(searchParam, movies);
+    const searchOption = await this.dtoSearchOptionMapper.convertToDomain(searchDto);
+    const movies:Movie[] = await this.searchService.search(searchOption);
+
+    this.logMovieSearch(searchDto, movies);
 
     return { movies };
   }
