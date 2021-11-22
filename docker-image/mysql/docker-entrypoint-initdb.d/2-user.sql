@@ -4,9 +4,8 @@ CREATE TABLE USER (
   `EMAIL` varchar(64) DEFAULT NULL COMMENT '이메일',
   `PASSWORD` varchar(64) DEFAULT NULL COMMENT '비밀번호',
   `NAME` varchar(8) DEFAULT NULL COMMENT '이름',
-  `FAV_DIRECTORS` varchar(64) DEFAULT NULL COMMENT '좋아하는 감독들, 스페이스로 구분',
-  `FAV_ACTORS` varchar(64) DEFAULT NULL COMMENT '좋아하는 배우, 스페이스로 구분',
-  `FAV_GENRES` varchar(64) DEFAULT NULL COMMENT '좋아하는 장르, 스페이스로 구분',
+  `ATTR1` varchar(8) DEFAULT NULL COMMENT '특성1',
+  `ATTR2` varchar(8) DEFAULT NULL COMMENT '특성2',
   `REG_DATE` datetime COMMENT '생성일자',
   `MOD_DATE` datetime COMMENT '수정일자'
 );
