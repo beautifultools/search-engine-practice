@@ -22,7 +22,7 @@ export class SearchService {
       }
     });
     const movieHits = body?.hits?.hits || [];
-    return movieHits.map(movieHit => EsMovieMapper.convertToMovie(movieHit._source));
+    return movieHits.map(movieHit => EsMovieMapper.convertToDomain(movieHit._source));
   }
 
 }

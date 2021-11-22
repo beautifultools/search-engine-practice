@@ -1,10 +1,8 @@
 import { Movie } from '../../entity/movie';
-import { MovieEntity } from '../../persistence/movie.orm';
+import { MovieIndex } from '../../persistence/movie.es';
 
 
-interface MovieMapper<T>{
-    convertToMovie(input:T):MovieEntity;
-    convertMovieTo(movie:Movie):T;
+interface MovieMapper<T> extends Mapper<Movie, T>{
 }
 
 export {

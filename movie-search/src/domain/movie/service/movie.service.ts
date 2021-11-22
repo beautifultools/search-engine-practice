@@ -10,6 +10,6 @@ export class MovieService {
 
   async getById(movieNo: number):Promise<Movie>{
     const movieEntity = await this.connection.getRepository(MovieEntity).findOne(movieNo);
-    return OrmMovieMapper.convertToMovie(movieEntity);
+    return OrmMovieMapper.convertToDomain(movieEntity);
   }
 }

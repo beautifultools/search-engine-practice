@@ -4,7 +4,7 @@ import { MovieEntity } from '../persistence/movie.orm';
 
 
 class OrmMovieMapper implements MovieMapper<MovieEntity> {
-    convertMovieTo(movie: MovieEntity): MovieEntity {
+    convertFromDomain(movie: MovieEntity): MovieEntity {
         return {
             movieNo: movie.movieNo,
             title: movie.title,
@@ -18,7 +18,7 @@ class OrmMovieMapper implements MovieMapper<MovieEntity> {
         };
     }
 
-    convertToMovie(movie: Movie): MovieEntity {
+    convertToDomain(movie: Movie): MovieEntity {
         return {
             movieNo: movie.movieNo,
             title: movie.title,

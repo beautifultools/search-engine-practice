@@ -4,7 +4,7 @@ import { Movie } from '../entity/movie';
 
 
 class EsMovieMapper implements MovieMapper<MovieIndex> {
-    convertMovieTo(movie: Movie): MovieIndex {
+    convertFromDomain(movie: Movie): MovieIndex {
         return {
             id: movie.movieNo,
             title: movie.title,
@@ -19,7 +19,7 @@ class EsMovieMapper implements MovieMapper<MovieIndex> {
         };
     }
 
-    convertToMovie(input: MovieIndex): Movie {
+    convertToDomain(input: MovieIndex): Movie {
         return {
             movieNo: input.id,
             title: input.title,
