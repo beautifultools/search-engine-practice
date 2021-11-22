@@ -26,8 +26,8 @@ const payload = {
             "title": {
                 "type": "text"
             },
-            "genre": {
-                "type": "text"
+            "genres": {
+                "type": "rank_features"
             },
             "type": {
                 "type": "text"
@@ -35,8 +35,8 @@ const payload = {
             "country": {
                 "type": "text"
             },
-            "director": {
-                "type": "text"
+            "directors": {
+                "type": "rank_features"
             },
             "open_date": {
                 "type": "date"
