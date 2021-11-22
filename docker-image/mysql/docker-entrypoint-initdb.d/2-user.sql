@@ -1,24 +1,4 @@
-DROP TABLE IF EXISTS USER;
-CREATE TABLE USER (
-  `ACCOUNT_NO` int NOT NULL AUTO_INCREMENT COMMENT '계정번호' PRIMARY KEY,
-  `EMAIL` varchar(64) DEFAULT NULL COMMENT '이메일',
-  `PASSWORD` varchar(64) DEFAULT NULL COMMENT '비밀번호',
-  `NAME` varchar(8) DEFAULT NULL COMMENT '이름',
-  `ATTR1` varchar(8) DEFAULT NULL COMMENT '특성1',
-  `ATTR2` varchar(8) DEFAULT NULL COMMENT '특성2',
-  `REG_DATE` datetime COMMENT '생성일자',
-  `MOD_DATE` datetime COMMENT '수정일자'
-);
-
-DROP TABLE IF EXISTS MOVIE;
-CREATE TABLE MOVIE (
-  `MOVIE_NO` int NOT NULL AUTO_INCREMENT COMMENT '계정번호' PRIMARY KEY,
-  `TITLE` varchar(64) DEFAULT NULL COMMENT '이메일',
-  `GENRE` varchar(32) DEFAULT NULL COMMENT '장르',
-  `TYPE` varchar(8) DEFAULT NULL COMMENT '타입',
-  `COUNTRY` varchar(8) DEFAULT NULL COMMENT '국가',
-  `DIRECTOR` varchar(32) DEFAULT NULL COMMENT '감독',
-  `OPEN_DATE` date DEFAULT NULL COMMENT '상영일자',
-  `REG_DATE` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '수정일자',
-  `MOD_DATE` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '수정일자'
-);
+INSERT INTO USER(EMAIL, PASSWORD, NAME, FAV_DIRECTOR, FAV_ACTOR, FAV_GENRE, REG_DATE, MOD_DATE)
+VALUES
+       ('user1@ipvaluepartners.com', 'test-pw', 'user1', '윤영빈 강인석', '정우성 배수지', '액션', NOW(), NOW()),
+       ('user2@ipvaluepartners.com', 'test-pw', 'user2', '신준영', '', '애니메이션', NOW(), NOW());
