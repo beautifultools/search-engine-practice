@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { MovieLogger } from '../interface/logger';
-import { EsLogger } from '../impl-by-db/es-logger';
+import { MovieLogger } from '../../../global/log/interface/logger';
+import { EsLogger } from '../../../global/log/es.logger';
 
 
 @Injectable()

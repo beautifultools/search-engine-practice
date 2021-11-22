@@ -34,8 +34,8 @@ class EsMovieMapper implements MovieMapper<MovieIndex> {
     }
 }
 
-const movieMapper = new EsMovieMapper();
+const esMovieMapper = new EsMovieMapper();
 
 export {
-    movieMapper as EsMovieMapper
+    esMovieMapper as EsMovieMapper
 }

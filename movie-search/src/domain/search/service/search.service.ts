@@ -1,7 +1,6 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Movie } from '../../movie/entity/movie';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
-import { SearchLogger } from '../../../global/log/interface/logger';
 import { EsMovieMapper } from '../../movie/mapper/es.movie.mapper';
 
 @Injectable()

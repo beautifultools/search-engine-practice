@@ -1,6 +1,5 @@
 import { Controller, Get, Inject, Param, Render, Session } from '@nestjs/common';
 import { MovieService } from '../service/movie.service';
-import { Movie } from '../entity/movie';
 import { MovieLogger } from '../../../global/log/interface/logger';
 
 

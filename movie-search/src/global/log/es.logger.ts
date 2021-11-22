@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
-import { AbstractLogger } from '../interface/logger';
+import { AbstractLogger } from './interface/logger';
 
 
 @Injectable()

@@ -1,0 +1,9 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 9907,
+  "username": "user",
+  "password": "user-pw",
+  "database": "ipvp",
+  "entities": ["dist/**/*.orm{.ts,.js}"]
+}

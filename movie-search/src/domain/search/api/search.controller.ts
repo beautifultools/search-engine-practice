@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Inject, Param, Query, Render, Session } from '@nestjs/common';
+import { Controller, Get, Inject, Query, Render, Session } from '@nestjs/common';
 import { SearchService } from '../service/search.service';
 import { Movie } from '../../movie/entity/movie';
 import { SearchLogger } from '../../../global/log/interface/logger';
