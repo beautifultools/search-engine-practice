@@ -14,11 +14,9 @@ export class MovieController {
   @Render('movie/detail')
   async detail(@Session() session: Record<string, any>, @Param("movieNo") movieNo:number) {
     const movie = await this.movieService.getById(movieNo);
-    console.log(movie);
-
     this.movieLogger.logDetailView({
       ...movie,
-      viewer:session.user || "unknown",
+      user: session.user || "unknown",
     });
 
     return { movie };
