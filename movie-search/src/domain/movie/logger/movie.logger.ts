@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { MovieLogger } from '../../../global/log/interface/logger';
 import { EsLogger } from '../../../global/log/es.logger';
+import { ES_INDEXES } from '../../../global/constant/elastic-search';
 
 
 @Injectable()
 export class EsMovieLogger implements MovieLogger {
-  readonly index:string = "log-movie-detail";
   readonly logger: EsLogger;
 
   constructor(logger: EsLogger) {
@@ -14,8 +14,11 @@ export class EsMovieLogger implements MovieLogger {
 
   logDetailView(data) {
     this.logger.log({
-      index: this.index,
-      data: data
+      index: ES_INDEXES.LOG_MOVIE_DETAIL_VIEW,
+      data: {
+        ...data,
+        updated_at: Date.now(),
+      }
     })
   }
 }

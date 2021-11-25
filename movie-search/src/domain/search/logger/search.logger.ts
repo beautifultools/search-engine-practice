@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { SearchLogger } from '../../../global/log/interface/logger';
 import { EsLogger } from '../../../global/log/es.logger';
+import { ES_INDEXES } from '../../../global/constant/elastic-search';
 
 
 @Injectable()
 export class EsSearchLogger implements SearchLogger {
-  readonly index:string = "log-search";
   readonly logger: EsLogger;
 
   constructor(logger: EsLogger) {
@@ -14,8 +14,11 @@ export class EsSearchLogger implements SearchLogger {
 
   logSearch(data) {
     this.logger.log({
-      index: this.index,
-      data: data
+      index: ES_INDEXES.LOG_SEARCH,
+      data: {
+        ...data,
+        updated_at: Date.now(),
+      }
     })
   }
 }

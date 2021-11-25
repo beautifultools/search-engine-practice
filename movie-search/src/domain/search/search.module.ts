@@ -6,6 +6,7 @@ import { SearchService } from './service/search.service';
 import { ElasticsearchModule } from '@nestjs/elasticsearch';
 import { UserModule } from '../user/user.module';
 import { DtoSearchOptionMapper } from './mapper/dto.search.mapper';
+import { SearchRankService } from './service/search.rank.service';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { DtoSearchOptionMapper } from './mapper/dto.search.mapper';
     node: 'http://localhost:9200',
   })],
   controllers:[SearchController],
-  providers:[SearchService, DtoSearchOptionMapper, {
+  providers:[SearchService, SearchRankService, DtoSearchOptionMapper, {
     provide: 'SearchLogger',
     useClass: EsSearchLogger,
   }],
