@@ -1,5 +1,4 @@
-import { Movie } from '../../entity/Movie';
-import { MovieIndex } from '../../persistence/movie.es';
+import { Movie } from '../../entity/movie';
 
 
 interface MovieMapper<T> extends Mapper<Movie, T>{

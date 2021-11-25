@@ -1,17 +1,17 @@
 import { MovieMapper } from './interface/movie.mapper';
 import { MovieIndex } from '../persistence/movie.es';
-import { Movie } from '../entity/Movie';
-
+import { Movie } from '../entity/movie';
+import { getEsRankScore, getKeyStringsFromEsRankScore } from '../../../global/util/es.score.util';
 
 class EsMovieMapper implements MovieMapper<MovieIndex> {
     convertFromDomain(movie: Movie): MovieIndex {
         return {
             id: movie.movieNo,
             title: movie.title,
-            genre: movie.genre,
+            genres: getEsRankScore(movie.genres),
             type: movie.type,
             country: movie.country,
-            director: movie.director,
+            directors: getEsRankScore(movie.directors),
             open_date: movie.openDate,
             reg_date: movie.regDate,
             mod_date: movie.modDate,
@@ -23,10 +23,10 @@ class EsMovieMapper implements MovieMapper<MovieIndex> {
         return {
             movieNo: input.id,
             title: input.title,
-            genre: input.genre,
+            genres: getKeyStringsFromEsRankScore(input.genres),
             type: input.type,
             country: input.country,
-            director: input.director,
+            directors: getKeyStringsFromEsRankScore(input.directors),
             openDate: input.open_date,
             regDate: input.reg_date,
             modDate: input.mod_date,

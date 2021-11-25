@@ -1,6 +1,6 @@
 import { Controller, Get, Inject, Query, Render, Session } from '@nestjs/common';
 import { SearchService } from '../service/search.service';
-import { Movie } from '../../movie/entity/Movie';
+import { Movie } from '../../movie/entity/movie';
 import { SearchLogger } from '../../../global/log/interface/logger';
 import { DtoSearchOptionMapper } from '../mapper/dto.search.mapper';
 

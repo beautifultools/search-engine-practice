@@ -1,10 +1,10 @@
 type Movie = {
   movieNo: number;
   title:string;
-  genre:string;
+  genres:string;
   type:string;
   country:string;
-  director:string;
+  directors:string;
   openDate: Date;
   regDate: Date;
   modDate: Date;

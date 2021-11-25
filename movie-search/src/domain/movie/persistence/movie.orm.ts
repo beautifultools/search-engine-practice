@@ -9,7 +9,7 @@ class MovieEntity {
   title:string;
 
   @Column({name:"GENRE"})
-  genre:string;
+  genres:string;
 
   @Column({name:"TYPE"})
   type:string;
@@ -18,7 +18,7 @@ class MovieEntity {
   country:string;
 
   @Column({name:"DIRECTOR"})
-  director:string;
+  directors:string;
 
   @Column({name:"OPEN_DATE"})
   openDate: Date;

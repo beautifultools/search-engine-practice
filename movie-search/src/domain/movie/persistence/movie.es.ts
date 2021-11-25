@@ -1,10 +1,10 @@
 type MovieIndex = {
   id: number;
   title: string;
-  genre: string;
+  genres: JSON;
   type: string;
   country: string;
-  director: string;
+  directors: JSON;
   open_date: Date;
   reg_date: Date;
   mod_date: Date;
